@@ -1,0 +1,295 @@
+<div class="container">
+  <div [hidden]="submitted">
+    <h1>ΓΝΩΣΤΙΚΗ ΕΚΤΙΜΗΣΗ ΜΟΝΤΡΕΑΛ MONTREAL COGNITIVE ASSESSMENT (MoCA)</h1>
+    <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+      
+      <div class="form-group">
+        <li  class="collection-item avatar">
+          <img src="data:image/png;base64,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" alt="" class="circle" width="150" height="150">
+          <span class="title">Visuospatial / Executive</span>
+        </li>
+        <label for="optikoxwrikes">optikoxwrikes</label>
+        <input type="text" class="form-control" id="optikoxwrikes"
+               required
+               [(ngModel)]="model.optikoxwrikes" name="optikoxwrikes"
+               #name="ngModel">
+        <div [hidden]="name.valid || name.pristine"
+             class="alert alert-danger">
+          Name is required
+        </div>
+        
+      </div>
+
+      <div class="form-group">
+        <li  class="collection-item avatar">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Necker_cube.svg/800px-Necker_cube.svg.png" alt="" class="circle" width="150" height="150">
+          <span class="title">Visuospatial / Executive Cube</span>
+          </li>
+        <label for="kybos">kybos</label>
+        <input type="text" class="form-control" id="kybos"
+               [(ngModel)]="model.kybos" name="kybos">
+      </div>
+
+      <div class="form-group">
+        <label for="power">clock</label>
+        <select class="form-control" id="clock"
+                required
+                [(ngModel)]="model.clock" name="clock"
+                #power="ngModel">
+          <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+        </select>
+        <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
+          Power is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <li  class="collection-item avatar">
+          <img src="https://edge.mcsw.net/mcsweeneys/rzruia4ftccu9hkvfcrvxah2muey" alt="" class="circle" width="400" height="150">
+          <span class="title">Naming</span>
+        </li>
+        <label for="katonomasia">katonomasia</label>
+        <input type="text" class="form-control" id="katonomasia"
+               required
+               [(ngModel)]="model.katonomasia" name="katonomasia"
+               #name="ngModel">
+        <div [hidden]="name.valid || name.pristine"
+             class="alert alert-danger">
+          Name is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="mnhmh_leksewn">mnhmh_leksewn</label>
+        <input type="text" class="form-control" id="mnhmh_leksewn"
+               [(ngModel)]="model.mnhmh_leksewn" name="mnhmh_leksewn">
+      </div>
+      <div class="form-group">
+        <label for="mnhmh_leksewn2">mnhmh_leksewn2</label>
+        <input type="text" class="form-control" id="mnhmh_leksewn2"
+               [(ngModel)]="model.mnhmh_leksewn2" name="mnhmh_leksewn2">
+      </div>
+
+      <div class="form-group">
+        <label for="mnhmh_arithmwn">mnhmh_arithmwn</label>
+        <select class="form-control" id="mnhmh_arithmwn"
+                required
+                [(ngModel)]="model.mnhmh_arithmwn" name="mnhmh_arithmwn"
+                #power="ngModel">
+          <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+        </select>
+        <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
+          Power is required
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label for="mnhmharithmwn">mnhmh_arithmwn2</label>
+        <input type="text" class="form-control" id="mnhmharithmwn"
+               required
+               [(ngModel)]="model.mnhmharithmwn" name="mnhmharithmwn"
+               #name="ngModel">
+        <div [hidden]="name.valid || name.pristine"
+             class="alert alert-danger">
+          Name is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="click_A">click_A</label>
+        <input type="text" class="form-control" id="click_A"
+               [(ngModel)]="model.click_A" name="click_A">
+      </div>
+
+      <div class="form-group">
+        <label for="afairesh7">afairesh7</label>
+        <select class="form-control" id="afairesh7"
+                required
+                [(ngModel)]="model.afairesh7" name="afairesh7"
+                #power="ngModel">
+          <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+        </select>
+        <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
+          Power is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="epanalabe">epanalabe</label>
+        <input type="text" class="form-control" id="epanalabe"
+               required
+               [(ngModel)]="model.epanalabe" name="epanalabe"
+               #name="ngModel">
+        <div [hidden]="name.valid || name.pristine"
+             class="alert alert-danger">
+          Name is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="epanalabe1">epanalabe1</label>
+        <input type="text" class="form-control" id="epanalabe1"
+               [(ngModel)]="model.epanalabe1" name="epanalabe1">
+      </div>
+
+      <div class="form-group">
+        <label for="leksois_X">leksois_X</label>
+        <select class="form-control" id="leksois_X"
+                required
+                [(ngModel)]="model.leksois_X" name="leksois_X"
+                #power="ngModel">
+          <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+        </select>
+        <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
+          Power is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="omoiothta">omoiothta</label>
+        <input type="text" class="form-control" id="omoiothta"
+               required
+               [(ngModel)]="model.omoiothta" name="omoiothta"
+               #name="ngModel">
+        <div [hidden]="name.valid || name.pristine"
+             class="alert alert-danger">
+          Name is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="anaklhsh_mnhmh_leksewn">anaklhsh_mnhmh_leksewn</label>
+        <input type="text" class="form-control" id="anaklhsh_mnhmh_leksewn"
+               [(ngModel)]="model.anaklhsh_mnhmh_leksewn" name="anaklhsh_mnhmh_leksewn">
+      </div>
+
+      <div class="form-group">
+        <label for="prosanatolismos">prosanatolismos</label>
+        <select class="form-control" id="prosanatolismos"
+                required
+                [(ngModel)]="model.prosanatolismos" name="prosanatolismos"
+                #power="ngModel">
+          <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+        </select>
+        <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
+          Power is required
+        </div>
+      </div>
+
+
+      <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
+      <button type="button" class="btn btn-default" (click)="newHero(); heroForm.reset()">New Hero</button>
+      <i>with</i> reset
+
+      &nbsp;&nbsp;
+      <button type="button" class="btn btn-default" (click)="newHero()">New Hero</button>
+      <i>without</i> reset
+
+     <!-- NOT SHOWN IN DOCS -->
+      <div>
+        <hr>
+        Name via form.controls = {{showFormControls(heroForm)}}
+      </div>
+     <!-- - -->
+    </form>
+  </div>
+
+  <div [hidden]="!submitted">
+    <h2>You submitted the following:</h2>
+    <div class="row">
+      <div class="col-xs-3">optikoxwrikes</div>
+      <div class="col-xs-9">{{ model.optikoxwrikes }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">kybos</div>
+      <div class="col-xs-9">{{ model.kybos }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">clock</div>
+      <div class="col-xs-9">{{ model.clock }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">katonomasia</div>
+      <div class="col-xs-9">{{ model.katonomasia }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">mnhmh_leksewn</div>
+      <div class="col-xs-9">{{ model.mnhmh_leksewn }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">mnhmh_arithmwn</div>
+      <div class="col-xs-9">{{ model.mnhmh_arithmwn }}</div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-3">mnhmharithmwn</div>
+      <div class="col-xs-9">{{ model.mnhmharithmwn }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">click_A</div>
+      <div class="col-xs-9">{{ model.click_A }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">afairesh7</div>
+      <div class="col-xs-9">{{ model.afairesh7 }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">epanalabe</div>
+      <div class="col-xs-9">{{ model.epanalabe }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">epanalabe1</div>
+      <div class="col-xs-9">{{ model.epanalabe1 }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">leksois_X</div>
+      <div class="col-xs-9">{{ model.leksois_X }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">omoiothta</div>
+      <div class="col-xs-9">{{ model.omoiothta }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">anaklhsh_mnhmh_leksewn</div>
+      <div class="col-xs-9">{{ model.anaklhsh_mnhmh_leksewn }}</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3">prosanatolismos</div>
+      <div class="col-xs-9">{{ model.prosanatolismos }}</div>
+    </div>
+
+
+
+
+    <br>
+    <button type="button" class="btn btn-primary" (click)="submitted=false">Edit</button>
+  </div>
+</div>
+
+<!-- ====================================================  -->
+  <div>
+    <form>
+
+       <!-- ... all of the form ... -->
+
+    </form>
+  </div>
+
+<!-- ====================================================  -->
+<hr>
+<style>
+  .no-style .ng-valid {
+  border-left: 1px  solid #CCC
+}
+
+  .no-style .ng-invalid {
+  border-left: 1px  solid #CCC
+}
+</style>
+
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
